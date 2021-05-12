@@ -21,8 +21,7 @@ import sys
 import os
 from tkinter import Tk, Label, Button
 
-
-
+#RUN THE PROGRAM THROUGH AN IDE
 
 print("▄▀▀█▄▄   ▄▀▀█▄   ▄▀▀▀▀▄  ▄▀▀▄ ▄▄")
 print('█ ▄▀   █ ▐ ▄▀ ▀▄ █ █   ▐ █  █   ▄▀ ')
