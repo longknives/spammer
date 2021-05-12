@@ -41,7 +41,7 @@ counting = False
 graffiti = False
 f = open('Graffiti.txt', 'r+')
 
-window.title("love-spammer") 
+window.title("dev-longknives") 
 window.minsize(600,400) 
 date = datetime.datetime.today()
 def restart_program():
@@ -54,10 +54,10 @@ button.grid(column=10, row=12)
 def gui(buttonClicked, everyone, counting, graffiti):
 
  if(graffiti == True):
-  reading = int(input("how many lines is your graffiti(enter 0 if you have no graffiti): "))
+ 
 
 
-  for i in range(0, reading):
+  for i in range(0, 4):
 
       x = str(f.readline())
       time.sleep(2)
@@ -127,12 +127,6 @@ def gui(buttonClicked, everyone, counting, graffiti):
 
  
  
- 
-
-
-button = ttk.Button(window, text = "Enter", command= gui(buttonClicked, everyone, counting, graffiti))
-             
-button.grid(column= 15, row = 1) 
 
 
 name = tk.StringVar()
@@ -150,9 +144,6 @@ label.grid(column = 0, row = 1)
  
 
 
-button1 = ttk.Button(window, text = "Enter", command=gui(buttonClicked, everyone , counting, graffiti))
-             
-button1.grid(column= 15, row = 2) 
 
 
 
@@ -175,9 +166,6 @@ nameEntered1.grid(column = 10, row = 2)
  
 
 
-button1 = ttk.Button(window, text = "Enter", command = gui(buttonClicked, everyone, counting, graffiti))
-             
-button1.grid(column= 15, row = 3) 
 
 
 
