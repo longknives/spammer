@@ -1,3 +1,4 @@
+import datetime
 from threading import Timer
 import time
 from tkinter.constants import COMMAND, END, FALSE
@@ -16,44 +17,108 @@ import urllib
 import urllib3
 import pyautogui
 import requests
+import sys
+import os
+from tkinter import Tk, Label, Button
 
 
 
 
+print("▄▀▀█▄▄   ▄▀▀█▄   ▄▀▀▀▀▄  ▄▀▀▄ ▄▄")
+print('█ ▄▀   █ ▐ ▄▀ ▀▄ █ █   ▐ █  █   ▄▀ ')
+print("▐ █    █   █▄▄▄█    ▀▄   ▐  █▄▄▄█  ")
+print("  █    █  ▄▀   █ ▀▄   █     █   █  ")
+print(" ▄▀▄▄▄▄▀ █   ▄▀   █▀▀▀     ▄▀  ▄▀  ")
 
 
+print("_________________________________________________")
 
-
-
-
-
- 
 
 window = tk.Tk()
 
 buttonClicked = False
+everyone = False
+counting = False
+graffiti = False
+f = open('Graffiti.txt', 'r+')
 
-
-window.title("dash-spammer") 
+window.title("love-spammer") 
 window.minsize(600,400) 
+date = datetime.datetime.today()
+def restart_program():
+      
+    python = sys.executable
+    os.execl(python, python, * sys.argv)
+button = ttk.Button(window, text="Quit", command=restart_program)
+button.grid(column=10, row=12)
+ 
+def gui(buttonClicked, everyone, counting, graffiti):
 
+ if(graffiti == True):
+  reading = int(input("how many lines is your graffiti(enter 0 if you have no graffiti): "))
+
+
+  for i in range(0, reading):
+
+      x = str(f.readline())
+      time.sleep(2)
+
+     
+      pyautogui.write(x)
+      time.sleep(1)
+      pyautogui.press("enter")
+      
+      
+    
+
+ if (counting == True):
+    
+     result1 = name1.get()
+     result2 = name2.get()
+     print(date)
+     print("Sending Attack")
+     for i in range(0, result1):
+         string = str(i)
+         pyautogui.write(string)
+         pyautogui.press("enter")
+         time.sleep(result2)
+         
+
+   
 
  
-def gui(buttonClicked):
-
-
- 
- 
- if(buttonClicked == True):
+ if(everyone == True):
   result = name.get()
   result1 = name1.get()
   result2 = name2.get()
+  print(date)
+  print("Sending Attack" )
+  
+
  
   
   for i in range(0, result1):
        pyautogui.write(result)
        pyautogui.press("enter")
+       pyautogui.press("enter")
        time.sleep(result2)
+ if(buttonClicked == True):
+      result = name.get()
+      result1 = name1.get()
+      result2 = name2.get()
+      print(date)
+      print("Sending Attack" )
+    
+
+  
+      for i in range(0, result1):
+       pyautogui.write(result)
+      
+       pyautogui.press("enter")
+       time.sleep(result2)
+
+
+ 
 
 
    
@@ -66,7 +131,7 @@ def gui(buttonClicked):
  
 
 
-button = ttk.Button(window, text = "Enter", command= gui(buttonClicked))
+button = ttk.Button(window, text = "Enter", command= gui(buttonClicked, everyone, counting, graffiti))
              
 button.grid(column= 15, row = 1) 
 
@@ -78,7 +143,7 @@ nameEntered.grid(column = 10, row = 1)
 
 
 
-label = ttk.Label(window, text = "text") # text
+label = ttk.Label(window, text = "Text") 
 label.grid(column = 0, row = 1) 
 
 
@@ -86,7 +151,7 @@ label.grid(column = 0, row = 1)
  
 
 
-button1 = ttk.Button(window, text = "Enter", command=gui(buttonClicked))
+button1 = ttk.Button(window, text = "Enter", command=gui(buttonClicked, everyone , counting, graffiti))
              
 button1.grid(column= 15, row = 2) 
 
@@ -96,7 +161,10 @@ button1.grid(column= 15, row = 2)
 
 
 
-label = ttk.Label(window, text = "times") # text
+
+
+
+label = ttk.Label(window, text = "Times") # text
 label.grid(column = 0, row = 2) 
 
 
@@ -108,7 +176,7 @@ nameEntered1.grid(column = 10, row = 2)
  
 
 
-button1 = ttk.Button(window, text = "Enter", command = print("good"))
+button1 = ttk.Button(window, text = "Enter", command = gui(buttonClicked, everyone, counting, graffiti))
              
 button1.grid(column= 15, row = 3) 
 
@@ -122,16 +190,34 @@ nameEntered2.grid(column = 10, row = 3)
 
 
 
-label = ttk.Label(window, text = "quick") 
+label = ttk.Label(window, text = "Quick") 
 label.grid(column = 0, row = 3) 
 
 
 
 
 
-button3 = ttk.Button(window, text = "start", command=lambda buttonClicked = True:gui(buttonClicked))
+button3 = ttk.Button(window, text = "Normal Spam", command=lambda buttonClicked = True:gui(buttonClicked, everyone, counting, graffiti))
              
-button3.grid(column= 10, row = 5) 
+button3.grid(column= 10, row = 4) 
+
+
+
+
+
+button1 = ttk.Button(window, text = "Discord Spam", command=lambda everyone = True:gui(buttonClicked, everyone, counting, graffiti))
+             
+button1.grid(column= 10, row = 5) 
+
+
+
+button1 = ttk.Button(window, text = "Counting", command=lambda counting = True:gui(buttonClicked, everyone, counting, graffiti))
+             
+button1.grid(column= 10, row = 6) 
+
+button1 = ttk.Button(window, text = "Graffiti", command=lambda graffiti = True:gui(buttonClicked, everyone, counting, graffiti))
+             
+button1.grid(column= 10, row = 8) 
 
 
 
